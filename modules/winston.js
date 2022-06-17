@@ -36,7 +36,6 @@ const logger = createLogger({
 });
 
 addColors(LoggerLevels.colors);
-
 logger.transports[0].level = "info";
 logger.info(`${pc.green("[LOGGER]")} Setting log level to ${logger.transports[0].level}`);
 
