@@ -24,7 +24,7 @@ const User =  mongoose.Schema({
 const Log = mongoose.Schema({
     username: String,
     message: String,
-    date: Number,
+    date: String,
 })
 
 const ChannelSchema = new mongoose.Schema({

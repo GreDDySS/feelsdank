@@ -6,7 +6,7 @@ const options = {
     options: { debug: false },
     connection: { reconnect: true, secure: true },
     identity: { username: feelsdank.Config.username, password: feelsdank.Config.password },
-    channels: ['greddyss']
+    channels: [feelsdank.Config.owner]
 };
 
 const client = new tmi.Client(options);

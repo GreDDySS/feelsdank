@@ -18,4 +18,5 @@ module.exports = {
     db_pass: process.env.DB_PASSWORD,
     db_ip: process.env.DB_IP,
     db_db: process.env.DB_DATABASE,
+    weather: process.env.WEATHER,
 };
