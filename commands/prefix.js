@@ -9,6 +9,7 @@ exports.run = async (client, args, channel, tags, message, user) => {
 
     client.say(channel, `FeelsOkayMan 👍 Префикс канала ${channelTarget} успешно заменён на "${args[1]}"`)
 }
+
 module.exports.config = {
     name: "prefix",
     description: "change prefix",
