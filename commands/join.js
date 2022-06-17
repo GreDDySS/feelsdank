@@ -1,8 +1,6 @@
 exports.run = async (client, args, channel, tags, message) => {
-    if (!["greddyss"].includes(tags.username)) return
     if (!args[0]) return
     const channelTarget = args[0].toLowerCase()
-
     const chonnel = await feelsdank.DB.Channel.findOne({username: channelTarget})
 
     if (chonnel == null) {
@@ -21,7 +19,8 @@ exports.run = async (client, args, channel, tags, message) => {
 
 module.exports.config = {
     name: "join",
-    description: "Подключение к другим каналам",
+    description: "connect to other channel",
     cooldown: 5000,
     aliases: [],
+    adminOnly: true,
 }
