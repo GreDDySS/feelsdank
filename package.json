@@ -1,0 +1,22 @@
+{
+  "name": "twitchbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "GreDDySS",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "dotenv": "^16.0.1",
+    "humanize-duration": "^3.27.2",
+    "ioredis": "^5.0.6",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.3.8",
+    "picocolors": "^1.0.0",
+    "tmi.js": "^1.8.5",
+    "winston": "^3.7.2"
+  }
+}
