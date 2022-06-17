@@ -1,5 +1,3 @@
-const pc = require("picocolors");
-
 exports.run = async (client, args, channel, tags, message, user) => {
     var now = new Date().toLocaleString();
     const Suggest = new feelsdank.DB.Suggest({
@@ -13,7 +11,8 @@ exports.run = async (client, args, channel, tags, message, user) => {
 
 module.exports.config = { 
     name: "suggest",
-    description: "Любой пользователь может оставить пожелаение, или предложить внести что-то новое!",
+    description: "Users can leave wishes, or suggest making something new!",
     cooldown: 10000,
     aliases: ["sg"],
+    adminOnly: false,
 }
