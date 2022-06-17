@@ -22,9 +22,11 @@ exports.run = (client, args, channel, tags, message) => {
             `@${tags.username} PONG! Ping: ${ping}ms | Uptime: ${timeformat(process.uptime())} | Memory: ${memory}MB/512MBs`)
     })
 }
+
 module.exports.config = {
     name: "ping",
     description: "",
     cooldown: 5000,
     aliases: ["pong"],
+    adminOnly: false,
 }
