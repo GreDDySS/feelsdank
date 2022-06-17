@@ -6,7 +6,6 @@ mongoose.connect(`mongodb+srv://${feelsdank.Config.db_user}:${feelsdank.Config.d
     connect()
 }).catch(e => feelsdank.Logger.error(`${pc.red("[DATABASE]")} || Error: ${e}`))
 
-
 const User =  mongoose.Schema({
     id: String,
     username: String,
