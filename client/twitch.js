@@ -30,5 +30,4 @@ client.on("connected", async () => {
     client.say("greddyss", "WatchingStream ");
 });
 
-
 module.exports = client;
