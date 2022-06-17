@@ -11,7 +11,7 @@ exports.run = async (client, args, channel, tags, message, user) => {
 }
 module.exports.config = {
     name: "weather",
-    description: "check weather",
+    description: "shows the weather for a given location",
     cooldown: 5000,
     aliases: ["wet"],
     adminOnly: false,
