@@ -14,7 +14,7 @@ fs.readdir(__dirname + "/../commands", (err, files) => {
     const jsfile = files.filter((f) => f.split(".").pop() == "js")
     if(!jsfile) {
         feelsdank.Logger.warn(`${pc.magenta("[WARN]")} || No command found! `);
-        return
+        return 
     }
 
     jsfile.forEach((f, i) => {
@@ -32,7 +32,12 @@ async function getCustomPrefix(channel) {
     const result = await ChannelModel.findOne({ username: channel}).catch(
         (err) => {feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error when searching for a prefix:` + `${err}`)}
     )
-    return result?.customPrefix
+    if (result.customPrefix == null) {
+        return defaultPrefix
+    } else {
+        return result.customPrefix
+    }
+
 };
 
 function setUserCooldown(cmdF, tags) {
