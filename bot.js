@@ -9,8 +9,7 @@ feelsdank.Config = require("./other/config");
 feelsdank.Logger = require("./modules/winston");
 feelsdank.DB = require("./modules/DataBase");
 
-
-feelsdank.Twitch = require('./modules/BrainBot');
+feelsdank.Twitch = require('./client/BrainBot');
 
 // Initializing
 async function start() {
@@ -22,6 +21,7 @@ async function start() {
     }
 };
 start();
+
 
 process
 .on('unhandledRejection', async (reason, promise) => {
