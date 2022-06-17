@@ -68,13 +68,13 @@ client.on("message", async (channel, tags, message, self) => {
     });
     newUser.save();
     };
-
+    var now = new Date().toLocaleString();
     if (message.startsWith(prefix.lenght)) {
         return
     } else { const newLog = new feelsdank.DB.Log({
         username: tags.username,
         message: message,
-        date: Date.now()
+        date: now
         })
         newLog.save();
     }
