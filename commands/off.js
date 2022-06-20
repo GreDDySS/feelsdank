@@ -6,6 +6,7 @@ exports.run = async (client, args, channel, tags, message, user) => {
 module.exports.config = {
     name: "off",
     description: "off bot",
+    cooldown: 500,
     aliases: ["shutdown"],
     author: true,
 }
