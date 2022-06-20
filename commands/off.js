@@ -1,5 +1,5 @@
 exports.run = async (client, args, channel, tags, message, user) => {
-    await client.say(channel, "ppHopper restart 🔄")
+    await client.say(channel, "ppPoof off!")
     process.exit()
 }
 
