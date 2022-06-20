@@ -8,7 +8,6 @@ global.feelsdank = {};
 feelsdank.Config = require("./other/config");
 feelsdank.Logger = require("./modules/winston");
 feelsdank.DB = require("./modules/DataBase");
-
 feelsdank.Twitch = require('./client/BrainBot');
 
 // Initializing
