@@ -1,6 +1,6 @@
 exports.run = async (client, args, channel, tags, message) => {
     const dice = Math.floor(Math.random()*6) +1;
-    client.say(channel, `@${user['display-name']}, Результат: ${dice}`);
+    client.say(channel, `@${tags['display-name']}, Результат: ${dice}`);
 }
 
 module.exports.config = {
