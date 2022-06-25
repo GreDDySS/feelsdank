@@ -1,5 +1,5 @@
 exports.run = async (client, args, channel, tags, message) => {
-    if(args) {
+    if(args[0]) {
         const arg = args[0].toLowerCase()
         const targe = await feelsdank.DB.User.findOne({username: arg})
         if (targe == null) {
