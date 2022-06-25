@@ -1,5 +1,5 @@
 exports.run = async (client, args, channel, tags, message, user) => {
-    var now = new Date().toLocaleString();
+    var now = new Date().toLocaleDateString();
     const Suggest = new feelsdank.DB.Suggest({
         author: tags.username,
         message: args.join(" "),
