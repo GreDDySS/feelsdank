@@ -8,5 +8,5 @@ module.exports.config = {
     description: "off bot",
     cooldown: 500,
     aliases: ["shutdown"],
-    author: true,
+    adminOnly: true,
 }
