@@ -56,8 +56,8 @@ function setUserCooldown(cmdF, tags) {
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
     channel = channel.replace("#", "");
-    const prefix = (await getCustomPrefix(channel)) || defaultPrefix
-    
+    const prefix = await getCustomPrefix(channel)
+
     // Checking the user in DB, if not -> add to DB
     const User = await feelsdank.DB.User.findOne({id: tags['user-id']});
     if (User == null) {
@@ -69,15 +69,35 @@ client.on("message", async (channel, tags, message, self) => {
     newUser.save();
     };
     var now = new Date().toLocaleDateString();
-    if (message.startsWith(prefix.lenght)) {
+
+    if (message.startsWith(defaultPrefix)) {
         return
-    } else { const newLog = new feelsdank.DB.Log({
+    } if (message.startsWith(prefix)) {
+        return
+    } if (tags['user-id'] === ['555579413', '100135110', '113050046']) {
+        return
+    } else { 
+        const newLog = new feelsdank.DB.Log({
         username: tags.username,
         message: message,
         date: now
         })
         newLog.save();
+        const point = await feelsdank.DB.User.findOneAndUpdate(
+            { id: tags['user-id']},
+            { $inc : {'points' : 1}}
+        )
+        point.save();
     }
+    
+})
+
+client.on("message", async (channel, tags, message, self) => {
+    if (self) return;
+    channel = channel.replace("#", "");
+    const prefix = (await getCustomPrefix(channel)) || defaultPrefix
+    const perm = await feelsdank.DB.User.findOne({id: tags['user-id']});
+    
     
     let args = message.slice(prefix.length).trim().split(/ +/g)
     let cmd = args.shift().toLowerCase()
@@ -86,7 +106,7 @@ client.on("message", async (channel, tags, message, self) => {
     if (!cmdF || !message.startsWith(prefix) || cmdF.cooldown_users.includes(tags["user-id"]))
         return
     
-    if (cmdF.config.author && !(tags.username == feelsdank.Config.owner)) return;
+    if (cmdF.config.adminOnly && !(tags.username == feelsdank.Config.owner) && !(perm.permission == "spec")) return;
     
     try {
         cmdF.run(client, args, channel, tags, message)
