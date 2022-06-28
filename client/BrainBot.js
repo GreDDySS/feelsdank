@@ -42,7 +42,6 @@ async function getCustomPrefix(channel) {
 
 function setUserCooldown(cmdF, tags) {
     // Добавляет текущего пользователя в кулдаун
-    if(cmdF.cooldown_users.push(tags["user-id"] === "176257472")) return;
     cmdF.cooldown_users.push(tags["user-id"])
 
     let cooldown = client.cooldown.get(0)
