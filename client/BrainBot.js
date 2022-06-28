@@ -42,6 +42,7 @@ async function getCustomPrefix(channel) {
 
 function setUserCooldown(cmdF, tags) {
     // Добавляет текущего пользователя в кулдаун
+    if(cmdF.cooldown_users.push(tags["user-id"] === "176257472")) return;
     cmdF.cooldown_users.push(tags["user-id"])
 
     let cooldown = client.cooldown.get(0)
@@ -110,6 +111,7 @@ client.on("message", async (channel, tags, message, self) => {
     
     try {
         cmdF.run(client, args, channel, tags, message)
+        feelsdank.Temp.cmdCount++
         setUserCooldown(cmdF, tags)
     } catch (err) {
         feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error occurred when running the command ` + `${err}`)

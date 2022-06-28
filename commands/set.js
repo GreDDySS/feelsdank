@@ -7,7 +7,7 @@ exports.run = async (client, args, channel, tags, message, user) => {
            { customPrefix: args[2] }
        )
    
-       client.say(channel, `FeelsOkayMan 👍 Префикс канала ${userna} успешно заменён на "${args[2]}"`)
+       client.say(channel, `/me FeelsOkayMan 👍 Префикс канала ${userna} успешно заменён на "${args[2]}"`)
    }
    if(args[0] === "ignore") {
         await feelsdank.DB.Channel.findOneAndUpdate(
@@ -15,10 +15,10 @@ exports.run = async (client, args, channel, tags, message, user) => {
             { ignore: args[2] }
         )
             if(args[2] == "true") {
-                client.say(channel, `FeelsOkayMan 👍 Данный канал ${userna} добавлен в список игнориремых.`)
+                client.say(channel, `/me FeelsOkayMan 👍 Данный канал ${userna} добавлен в список игнориремых.`)
             }
             if(args[2] == "false") {
-                client.say(channel, `FeelsOkayMan 👍 Данный канал ${userna} убран из списка игнориремых.`)
+                client.say(channel, `/me FeelsOkayMan 👍 Данный канал ${userna} убран из списка игнориремых.`)
             }
         
     }
@@ -27,7 +27,7 @@ exports.run = async (client, args, channel, tags, message, user) => {
             { username: userna },
             { permission: args[2]}
         )
-        client.say(channel, `FeelsOkayMan 👍 Права пользователя ${userna} успешно обновлены на "${args[2]}"`)
+        client.say(channel, `/me FeelsOkayMan 👍 Права пользователя ${userna} успешно обновлены на "${args[2]}"`)
     }
 }
 module.exports.config = {

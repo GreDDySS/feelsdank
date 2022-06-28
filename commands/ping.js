@@ -1,26 +1,12 @@
-exports.run = (client, args, channel, tags, message) => {
-    function timeformat(seconds){
-        function pad(s){
-            return (s < 10 ? '' : '') + s;
-        }
-        var days = Math.floor(seconds / (60*60*24))
-        var hours = Math.floor(seconds / (60 * 60) % 24);
-        var minutes = Math.floor(seconds % (60*60) / 60);
-        var sec = Math.floor(seconds % 60); 
-    
-        
-        return pad(days) + ' days ' + pad(hours) + ' hours ' + pad(minutes) + " min " + pad(sec) + " sec ";
-      }
+exports.run = async (client, args, channel, tags, message) => {
     const used = process.memoryUsage().heapUsed / 1024 / 1024
     const memory = Math.round(used * 100) / 100
+    const channelCount = await feelsdank.DB.Channel.find({ignore: false});
 
     client.ping().then(function (data) {
         let ping = Math.floor(Math.round(data * 1000))
 
-        client.say(
-            channel,
-            `@${tags.username} PONG! Ping: ${ping}ms | Uptime: ${timeformat(process.uptime())} | Memory: ${memory}MB/512MBs`)
-    })
+        client.say(channel, `@${tags.username} PONG! 🟢 Ping: ${ping}ms | Channels: ${channelCount.length} | Uptime: ${feelsdank.Misc.uptime()} | Memory: ${memory}MB/512MBs | Cmd executed: ${feelsdank.Temp.cmdCount}`)})
 }
 
 module.exports.config = {

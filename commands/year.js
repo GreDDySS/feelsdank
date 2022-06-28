@@ -6,7 +6,7 @@ exports.run = async (client, args, channel, tags, message) => {
     hours = Math.floor((msDiff / (1000 * 60 * 60) - 3) % 24),
     mins = Math.floor((msDiff / 1000 / 60) % 60)
 
-    client.say(channel, `До конца года осталось: ${days}d ${hours}h ${mins}m `)
+    client.say(channel, `До конца года осталось: ${days}d ${hours}h ${mins}m`)
 
 }
 
