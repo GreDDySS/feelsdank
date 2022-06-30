@@ -78,16 +78,12 @@ client.on("message", async (channel, tags, message, self) => {
         return
     } else { 
         const newLog = new feelsdank.DB.Log({
-        username: tags.username,
-        message: message,
-        date: now
+            channel: channel,
+            username: tags.username,
+            message: message,
+            date: now
         })
         newLog.save();
-        const point = await feelsdank.DB.User.findOneAndUpdate(
-            { id: tags['user-id']},
-            { $inc : {'points' : 1}}
-        )
-        point.save();
     }
     
 })
@@ -115,6 +111,6 @@ client.on("message", async (channel, tags, message, self) => {
     } catch (err) {
         feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error occurred when running the command ` + `${err}`)
     }
-    console.log(cmdF)
+    
 });
 
