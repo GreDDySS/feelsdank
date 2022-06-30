@@ -13,14 +13,11 @@ const User =  mongoose.Schema({
     permission: {
         type: String,
         default: 'user'
-    },
-    points: {
-        type: Number,
-        default: 500
     }
 })
 
 const Log = mongoose.Schema({
+    channel: String,
     username: String,
     message: String,
     date: String,
@@ -44,13 +41,7 @@ const SuggestSchema = new mongoose.Schema({
     date: String,
 })
 
-const JackpotSchema = new mongoose.Schema({
-    name: {type: String},
-    jackpot: Number
-})
-
 module.exports.Suggest = mongoose.model("Suggest", SuggestSchema, "Suggests")
 module.exports.Channel = mongoose.model("Channel", ChannelSchema, "Channels");
 module.exports.User = mongoose.model('User', User, "Users");
 module.exports.Log = mongoose.model('Log', Log, "Logs");
-module.exports.Jackpot = mongoose.model("Jackpot", JackpotSchema, "Jackpot")
