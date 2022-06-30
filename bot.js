@@ -10,6 +10,7 @@ feelsdank.Logger = require("./modules/winston");
 feelsdank.DB = require("./modules/DataBase");
 feelsdank.Twitch = require('./client/BrainBot');
 feelsdank.Misc = require("./modules/misc");
+feelsdank.Api = require("./modules/apiClients");
 feelsdank.Temp = {cmdCount: 0}
 
 // Initializing
