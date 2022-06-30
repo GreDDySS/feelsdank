@@ -56,8 +56,6 @@ function setUserCooldown(cmdF, tags) {
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
     channel = channel.replace("#", "");
-    const prefix = await getCustomPrefix(channel)
-
     // Checking the user in DB, if not -> add to DB
     const User = await feelsdank.DB.User.findOne({id: tags['user-id']});
     if (User == null) {
@@ -68,24 +66,6 @@ client.on("message", async (channel, tags, message, self) => {
     });
     newUser.save();
     };
-    var now = new Date().toLocaleDateString();
-
-    if (message.startsWith(defaultPrefix)) {
-        return
-    } if (message.startsWith(prefix)) {
-        return
-    } if (tags['user-id'] === ['555579413', '100135110', '113050046']) {
-        return
-    } else { 
-        const newLog = new feelsdank.DB.Log({
-            channel: channel,
-            username: tags.username,
-            message: message,
-            date: now
-        })
-        newLog.save();
-    }
-    
 })
 
 client.on("message", async (channel, tags, message, self) => {
