@@ -15,14 +15,6 @@ const User =  mongoose.Schema({
         default: 'user'
     }
 })
-
-const Log = mongoose.Schema({
-    channel: String,
-    username: String,
-    message: String,
-    date: String,
-})
-
 const ChannelSchema = new mongoose.Schema({
     username: String,
     customPrefix: {
@@ -41,7 +33,15 @@ const SuggestSchema = new mongoose.Schema({
     date: String,
 })
 
+const streamerSchema = new mongoose.Schema({
+    channel: String,
+    title: String,
+    titleTime: String,
+    game: String,
+    gameTime: String
+})
+
 module.exports.Suggest = mongoose.model("Suggest", SuggestSchema, "Suggests")
 module.exports.Channel = mongoose.model("Channel", ChannelSchema, "Channels");
 module.exports.User = mongoose.model('User', User, "Users");
-module.exports.Log = mongoose.model('Log', Log, "Logs");
+module.exports.Streamer = mongoose.model("Streamer", streamerSchema, "Streamers")
