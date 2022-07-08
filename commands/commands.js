@@ -3,7 +3,7 @@ exports.run = async (client, args, channel, tags, message) => {
 }
 
 module.exports.config = {
-    name: "templ",
+    name: "commands",
     description: "",
     cooldown: 5000,
     aliases: ["cmd"],
