@@ -1,5 +1,5 @@
 exports.run = async (client, args, channel, tags, message) => {
-    client.say(channel, `${tags["dispalay-name"]}, Информация бота тут 👉 greddyss.ru`)
+    client.say(channel, `${tags["display-name"]}, Информация бота тут 👉 greddyss.ru`)
 }
 
 module.exports.config = {
