@@ -9,28 +9,14 @@ const twitchAuth = async (link,  config) => {
   return data;
 };
 
-// Twitch API v5
-const kraken = async (link, config) => {
-  const { data } = await axios.request({
-    url: `https://api.twitch.tv/kraken/${link}`,
-    timeout: 1500,
-    headers: {
-      "Client-ID": feelsdank.Config.clientId,
-      Accept: "application/vnd.twitchtv.v5+json",
-    },
-    ...config,
-  });
-  return data;
-};
-
 // Twitch Helix API
 const helix = async (link, config) => {
   const { data } = await axios.request({
     url: `https://api.twitch.tv/helix/${link}`,
     timeout: 1500,
     headers: {
-      "Client-ID": feelsdank.Config.clientId,
-      Authorization: `Bearer ${feelsdank.Config.bearer}`,
+      "Authorization": `Bearer ${feelsdank.Config.bearer}`,
+      "Client-Id": `${feelsdank.Config.clientId}`
     },
     ...config,
   });
@@ -66,4 +52,4 @@ const request = async(link, config) => {
   return data;
 }
 
-module.exports = {twitchAuth, kraken, helix, tmi, leppunen, request}
+module.exports = {twitchAuth, helix, tmi, leppunen, request}
