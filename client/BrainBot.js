@@ -91,6 +91,6 @@ client.on("message", async (channel, tags, message, self) => {
     } catch (err) {
         feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error occurred when running the command ` + `${err}`)
     }
-    
+    console.log(cmdF)
 });
 
