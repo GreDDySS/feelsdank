@@ -11,11 +11,13 @@ feelsdank.DB = require("./modules/DataBase");
 feelsdank.Twitch = require('./client/BrainBot');
 feelsdank.Misc = require("./modules/misc");
 feelsdank.Api = require("./modules/apiClients");
+feelsdank.Seven = require("./client/7tv").initialize();
 feelsdank.Temp = {cmdCount: 0}
 
 // Initializing
 async function start() {
     try {
+        feelsdank.Seven
         feelsdank.Twitch;
         feelsdank.DB;
     } catch (e) {
