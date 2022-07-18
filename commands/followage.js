@@ -20,18 +20,18 @@ exports.run = async (client, args, channel, tags, message) => {
     const follow = await feelsdank.Api.leppunen(`subage/${username}/${Rchannel}`)
 
     if (follow["followedAt"]) {
-        const ms = new Date().getTime - Date.parse(follow["followedAt"]);
+        const ms = new Date().getTime() - Date.parse(follow["followedAt"]);
         client.say(channel, `@${tags["display-name"]}, Пользователь ${username} подписан на ${Rchannel} ${feelsdank.Misc.humanizeDuration(ms)}.`)
 
     } else { 
         client.say(channel, `@${tags["display-name"]}, Пользователь ${username} не подписан на ${Rchannel}.`)
+        
     }
-    
 }
 module.exports.config = {
     name: "followage",
     description: "give you the time a given user has followed a given channel",
     cooldown: 5000,
     aliases: ["followe"],
-    adminOnly: true,
+    adminOnly: false,
 }

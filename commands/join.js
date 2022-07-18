@@ -10,6 +10,7 @@ exports.run = async (client, args, channel, tags, message) => {
         })
         newChannel.save();
         await client.join(channelTarget)
+        await client.say(`${args[0]}`, `@${args[0]}, YO!`)
         await client.say(channel,`Успешно подключился к ${args[0]} FeelsOkayMan`)
     } else {
         client.say(channel, "Данный канал уже используется 😶")
