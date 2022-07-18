@@ -29,6 +29,18 @@ exports.run = async (client, args, channel, tags, message, user) => {
         )
         client.say(channel, `/me FeelsOkayMan 👍 Права пользователя ${userna} успешно обновлены на "${args[2]}"`)
     }
+    if(args[0] === "7tv") {
+        await feelsdank.DB.Channel.findOneAndUpdate(
+            { username: userna },
+            { SevenTV: args[2] }
+        )
+            if(args[2] == "true") {
+                client.say(channel, `/me FeelsOkayMan 👍 На каналe ${userna} включены эвенты 7TV.`)
+            }
+            if(args[2] == "false") {
+                client.say(channel, `/me FeelsOkayMan 👍 На каналe ${userna} выключены эвенты 7TV.`)
+            }
+    }
 }
 module.exports.config = {
     name: "set",
