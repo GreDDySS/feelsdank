@@ -24,6 +24,10 @@ const ChannelSchema = new mongoose.Schema({
     ignore: {
         type: Boolean,
         default: false
+    },
+    SevenTV: {
+        type: Boolean,
+        default: true
     }
 })
 
