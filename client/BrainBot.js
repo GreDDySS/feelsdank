@@ -41,7 +41,7 @@ async function getCustomPrefix(channel) {
 };
 
 function setUserCooldown(cmdF, tags) {
-    // Добавляет текущего пользователя в кулдаун
+    // add user in cooldown
     cmdF.cooldown_users.push(tags["user-id"])
 
     let cooldown = client.cooldown.get(0)
@@ -82,15 +82,14 @@ client.on("message", async (channel, tags, message, self) => {
     if (!cmdF || !message.startsWith(prefix) || cmdF.cooldown_users.includes(tags["user-id"]))
         return
     
-    if (cmdF.config.adminOnly && !(tags.username == feelsdank.Config.owner) && !(perm.permission == "spec")) return;
-    
-    try {
-        cmdF.run(client, args, channel, tags, message)
-        feelsdank.Temp.cmdCount++
+        if (cmdF.config.adminOnly && !(tags.username == feelsdank.Config.owner) && !(perm.permission == "spec")) return;
+        
+        try {
+            cmdF.run(client, args, channel, tags, message)
+            feelsdank.Temp.cmdCount++
         setUserCooldown(cmdF, tags)
     } catch (err) {
         feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error occurred when running the command ` + `${err}`)
     }
-    console.log(cmdF)
 });
 
