@@ -2,7 +2,7 @@ exports.run = async (client, args, channel, tags, message) => {
     const used = process.memoryUsage().heapUsed / 1024 / 1024
     const memory = Math.round(used * 100) / 100
     const channelCount = await feelsdank.DB.Channel.find({ignore: false});
-
+    
     client.ping().then(function (data) {
         let ping = Math.floor(Math.round(data * 1000))
 
