@@ -7,9 +7,9 @@ var source = null
 const createEventSource = async () => {
     var channels = await feelsdank.DB.Channel.find({SevenTV_Events: "true"})
         const url = `${Main}&channel=${channels
-            .map((c) => c.twitch_name)
+            .map((c) => c.username)
             .join("&channel=")}`
-    source = new EventSource(Main)
+    source = new EventSource(url)
 }
 
 const handleEvent = (e) => {
