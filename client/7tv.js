@@ -5,7 +5,7 @@ const Main = `https://events.7tv.app/v1/channel-emotes?channel=${feelsdank.Confi
 var source = null
 
 const createEventSource = async () => {
-    var channels = await feelsdank.DB.Channel.find({SevenTV_Events: "true"})
+    var channels = await feelsdank.DB.Channel.find({SevenTV: "true"})
         const url = `${Main}&channel=${channels
             .map((c) => c.username)
             .join("&channel=")}`
@@ -32,10 +32,13 @@ const addListener = () => {
 }
 
 const initialize = async () => {
+    if (source !== null) {
+        source.close()
+    }
     source = null
     await createEventSource().then(() => {
         addListener()
     })
 }
 
-module.exports = { initialize }
+module.exports = { initialize, source}
