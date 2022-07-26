@@ -1,8 +1,8 @@
-const {exec} = require("child_process")
+const shell = require("child_process")
 exports.run = async (client, args, channel, tags, message) => {
-    await exec("git pull")
+    await shell.exec("git pull")
     await client.say(channel, '🔁 restart!')
-    await process.exit().then(exec("npm starts"))
+    await shell.exec("sudo reboot")
 }
 
 module.exports.config = {
