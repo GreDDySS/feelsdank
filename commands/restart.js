@@ -2,7 +2,7 @@ const {exec} = require("child_process")
 exports.run = async (client, args, channel, tags, message) => {
     await exec("git pull")
     await client.say(channel, '🔁 restart!')
-    await exec("npm start")
+    await process.exit().then(exec("npm starts"))
 }
 
 module.exports.config = {
