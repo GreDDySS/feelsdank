@@ -23,7 +23,7 @@ const joinChannels = async () => {
     feelsdank.Logger.info(`${pc.green("[CHANNEL]")} || Bot successfully connect ${result.length} channels.`)
 }
 
-client.connect().catch((err) => {console.log("connect fail | twitch.js")}).then(() => {joinChannels()})
+client.connect().catch((err) => {feelsdank.Logger.warn(`${pc.yellow('[CONNECTED]')} || Connected to channels failed 🔴`);}).then(() => {joinChannels()})
 
 client.on("connected", async () => {
     feelsdank.Logger.info(`${pc.green('[CONNECTED]')} || Connected to twitch 🟢`);
