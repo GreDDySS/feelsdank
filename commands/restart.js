@@ -2,6 +2,7 @@ const shell = require("child_process")
 exports.run = async (client, args, channel, tags, message) => {
     await client.say(channel, `🔁 Restart...`)
     await shell.exec("git pull")
+    await shell.exec("npm i")
     shell.execSync("node bot.js")
 
 }
