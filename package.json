@@ -15,6 +15,7 @@
     "eventsource": "^2.0.2",
     "humanize-duration": "^3.27.2",
     "ioredis": "^5.0.6",
+    "mathjs": "^11.0.1",
     "mongoose": "^6.2.8",
     "picocolors": "^1.0.0",
     "tmi.js": "^1.8.5",
