@@ -66,4 +66,10 @@ const humanizeDuration = (ms) => {
   return humanize(ms, options);
 };
 
-  module.exports = { uptime, humanizer, timeDelta, humanizeDuration}
+const randomConnectEmote = () => {
+  const emote = ["modCheck", "meow", "Lurk", "NaN", "peepoArrive", "ppHopper", "WatchingStream"]
+  const random = Math.round(Math.random() * emote.length)
+  return emote[random]
+}
+
+  module.exports = { uptime, humanizer, timeDelta, humanizeDuration, randomConnectEmote}
