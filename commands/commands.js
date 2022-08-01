@@ -6,6 +6,6 @@ module.exports.config = {
     name: "commands",
     description: "",
     cooldown: 5000,
-    aliases: ["cmd"],
+    aliases: ["cmd", "help"],
     adminOnly: false,
 }
