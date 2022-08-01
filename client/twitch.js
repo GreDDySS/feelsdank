@@ -27,7 +27,7 @@ client.connect().catch((err) => {feelsdank.Logger.warn(`${pc.yellow('[CONNECTED]
 
 client.on("connected", async () => {
     feelsdank.Logger.info(`${pc.green('[CONNECTED]')} || Connected to twitch 🟢`);
-    client.say("greddyss", `${feelsdank.Misc.randomConnectEmote}`);
+    client.say("greddyss", `${feelsdank.Misc.randomConnectEmote()}`);
 });
 
 module.exports = client;

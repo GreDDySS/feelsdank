@@ -68,7 +68,7 @@ const humanizeDuration = (ms) => {
 
 const randomConnectEmote = () => {
   const emote = ["modCheck", "meow", "Lurk", "NaN", "peepoArrive", "ppHopper", "WatchingStream"]
-  const random = Math.round(Math.random() * emote.length)
+  const random = Math.floor(Math.random() * emote.length)
   return emote[random]
 }
 
