@@ -72,4 +72,14 @@ const randomConnectEmote = () => {
   return emote[random]
 }
 
-  module.exports = { uptime, humanizer, timeDelta, humanizeDuration, randomConnectEmote}
+const random = (num) => {
+  const result = Math.floor(Math.random() * num) +1;
+  return result
+}
+
+const randomArg = (arg) => {
+  const result = Math.floor(Math.random() * arg.length)
+  return arg[result]
+}
+
+  module.exports = { uptime, humanizer, timeDelta, humanizeDuration, randomConnectEmote, random, randomArg}
