@@ -70,7 +70,7 @@ client.on("message", async (channel, tags, message, self) => {
 
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
-    if (tags['user-id'] === "176257472" && message === "monkaGIGAftSaj 🚨 ALERT!") {
+    if (tags['user-id'] === "555579413" && message === "monkaGIGAftSaj 🚨 ALERT!") {
         client.say(channel, "monkaS 🚨 АЛЕРТ!!!!")
     }
     console.log(message)
