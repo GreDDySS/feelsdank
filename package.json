@@ -4,7 +4,7 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "nodemon bot.js"
   },
   "author": "GreDDySS",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "ioredis": "^5.0.6",
     "mathjs": "^11.0.1",
     "mongoose": "^6.2.8",
+    "nodemon": "^2.0.19",
     "picocolors": "^1.0.0",
     "tmi.js": "^1.8.5",
     "winston": "^3.7.2"
