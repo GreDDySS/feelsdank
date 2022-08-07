@@ -19,9 +19,7 @@ const replies = [
 ];
 
 exports.run = async (client, args, channel, tags, message) => {
-    const ball = Math.floor(Math.random() * replies.length);
-
-    client.say(channel, `@${tags['display-name']}, ${replies[ball]}`)
+    client.say(channel, `@${tags['display-name']}, ${feelsdank.Misc.randomArg(replies)}`)
 }
 
 module.exports.config = {
