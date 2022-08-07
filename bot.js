@@ -29,9 +29,11 @@ start();
 
 process
 .on('unhandledRejection', async (reason, promise) => {
-    return feelsdank.Logger.error(`${pc.red('[UnhandledRejection]')} || ${utils.inspect(promise)} -> ${reason}`);
+    feelsdank.Misc.logError("UnhandledRejection", utils.inspect(promise), utils.inspect(reason))
+    return feelsdank.Logger.error(`${pc.red('[UnhandledRejection]')} || ${reason}`);
 })
 .on('uncaughtException', async (err) => {
+    feelsdank.Misc.logError("UnhandledRejection", err.message, err.stack || "")
     feelsdank.Logger.error(`${pc.red('[UncaughtException]')} || ${err.message}`);
     return process.exit(0);
 });
