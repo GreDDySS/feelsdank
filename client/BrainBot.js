@@ -92,6 +92,7 @@ client.on("message", async (channel, tags, message, self) => {
             feelsdank.Temp.cmdCount++
         setUserCooldown(cmdF, tags)
     } catch (err) {
+        feelsdank.Misc.logError("Commands", err.message, err.stack || "")
         feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error occurred when running the command ` + `${err}`)
     }
 });
