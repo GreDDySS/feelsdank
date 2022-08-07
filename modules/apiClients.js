@@ -46,7 +46,7 @@ const leppunen = async (link, config) => {
 const request = async(link, config) => {
   const { data } = await axios.request({
     url: `https://${link}`,
-    timeout: 1500,
+    timeout: 3500,
     ...config,
   })
   return data;
