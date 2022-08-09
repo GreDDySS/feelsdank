@@ -12,7 +12,8 @@ feelsdank.Twitch = require('./client/BrainBot');
 feelsdank.Misc = require("./modules/misc");
 feelsdank.Api = require("./modules/apiClients");
 feelsdank.Seven = require("./client/7tv").initialize();
-feelsdank.Temp = {cmdCount: 0}
+feelsdank.Channel = require("./modules/channel")
+feelsdank.Temp = {cmdCount: 0, pubsubTopics: []}
 
 // Initializing
 async function start() {
