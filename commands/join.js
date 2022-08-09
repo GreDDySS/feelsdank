@@ -19,11 +19,13 @@ exports.run = async (client, args, channel, tags, message) => {
 
     if (tags.username === feelsdank.Config.owner) {
         const channelTarget = args[0].toLowerCase()
+        const uid = await feelsdank.Api.leppunen(`resolve/${channelTarget}`)
         const chonnel = await feelsdank.DB.Channel.findOne({username: channelTarget})
 
         if (chonnel == null) {
             const newChannel = new feelsdank.DB.Channel({
                 username: channelTarget,
+                id: uid.id,
                 customPrefix: args[1]
             })
             newChannel.save();
