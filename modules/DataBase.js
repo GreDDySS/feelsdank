@@ -17,6 +17,7 @@ const User =  mongoose.Schema({
 })
 const ChannelSchema = new mongoose.Schema({
     username: String,
+    id: Number,
     customPrefix: {
         type: String,
         required: false
@@ -26,6 +27,10 @@ const ChannelSchema = new mongoose.Schema({
         default: false
     },
     SevenTV: {
+        type: Boolean,
+        default: true
+    },
+    listenStreamStatus: {
         type: Boolean,
         default: true
     }
