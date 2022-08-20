@@ -20,7 +20,7 @@ exports.run = async (client, args, channel, tags, message) => {
 module.exports.config = {
     name: "prazdnik",
     description: "What a holiday today",
-    cooldown: 5000,
+    cooldown: 10000,
     aliases: ["праздник"],
-    adminOnly: true,
+    adminOnly: false,
 }
