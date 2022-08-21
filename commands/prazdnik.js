@@ -1,11 +1,11 @@
 const rp = require("request-promise")
 const cheerio = require("cheerio")
-const url = "https://kakoysegodnyaprazdnik.ru"
+const url = "https://kakoyprazdniksegodnya.ru/"
 exports.run = async (client, args, channel, tags, message) => {
     rp(url).then(htm => {
         const $ = cheerio.load(htm)
         let text = ""
-        $("#main_frame > div > div > div:nth-child(1) > div > a > span").each((i, elem) => {
+        $("body > div.wrap-page > div.prazdnik-block.prazdnik-block-1 > div > ol > li:nth-child(1)").each((i, elem) => {
             text += `${$(elem).text()}`
         })
         if (text.length > 350) {
