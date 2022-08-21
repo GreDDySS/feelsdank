@@ -20,6 +20,7 @@
     "mongoose": "^6.2.8",
     "nodemon": "^2.0.19",
     "picocolors": "^1.0.0",
+    "request-promise": "^4.2.6",
     "tmi.js": "^1.8.5",
     "winston": "^3.7.2"
   }
