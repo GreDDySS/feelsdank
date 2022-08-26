@@ -35,6 +35,6 @@ module.exports.config = {
     name: "prazdnik",
     description: "What a holiday today",
     cooldown: 10000,
-    aliases: ["празник"],
+    aliases: ["праздник"],
     adminOnly: false,
 }
