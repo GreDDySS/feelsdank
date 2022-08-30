@@ -1,7 +1,7 @@
 const rp = require("request-promise")
 const cheerio = require("cheerio")
 const url = "https://kakoyprazdniksegodnya.ru/"
-const user = `Artemu5 BJlaguK_ Bustegg Eggrereal Fedotir GreDDySS GuyRalt Gvardovskiy Gwinsen Iamplugg Iamplugs Matria9 RandomCancer RandomCancer2 StreamElements SunsetColours_ Tuwka_ Xomachel ZULULpa aetenae borobushE crestavlennn eggUrt iLotterytea leonidtelevizor m4x0nn monkeoS oladushek_k rilaveon saopin vexenigmus SunsetColours_ lydeco_ HumanStudi0 AlexanderLer Nipropieren`
+const user = `Artemu5 BJlaguK_ Bustegg Eggrereal Fedotir GreDDySS GuyRalt Gvardovskiy Gwinsen Iamplugg Iamplugs Matria9 RandomCancer RandomCancer2 StreamElements SunsetColours_ Tuwka_ Xomachel ZULULpa aetenae borobushE crestavlennn eggUrt iLotterytea leonidtelevizor m4x0nn monkeoS oladushegg_ rilaveon saopin vexenigmus SunsetColours_ lydeco_ HumanStudi0 AlexanderLer Nipropieren`
 const selector = 
 ["body > div.wrap-page > div.prazdnik-block.prazdnik-block-1 > div > ol > li:nth-child(1)",
 "body > div.wrap-page > div.prazdnik-block.prazdnik-block-1 > div > ol > li:nth-child(2)",
@@ -21,7 +21,7 @@ exports.run = async (client, args, channel, tags, message) => {
             text = `${result.substring(0, 347)}...`
         }
 
-        if(args[0] === "тык") {
+        if(args[0] === "kek" && channel === "iamplugg") {
             client.say(channel, `${user} Сегодняшний праздник: ${text}`)
         } else {
             client.say(channel, `Сегодняшний праздник: ${text}`)
