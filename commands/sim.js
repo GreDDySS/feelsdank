@@ -6,7 +6,7 @@ exports.run = async (client, args, channel, tags, message) => {
     rp(url).then(htm => {
         const $ = cheerio.load(htm)
         let text = ""
-        $("body > div.main.wrapper > div.inner_column.size_large.family_comic-neue > div.view_game_page.page_widget > div.columns > div.left_col.column > div.uploads > div > div > div > div > strong").each((i, elem) => {
+        $("body > div.main.wrapper > div.inner_column.size_large.family_comic-neue > div.view_game_page.page_widget > div.columns > div.left_col.column > div.uploads > div > div:nth-child(1) > div > div > strong").each((i, elem) => {
             
           text += `${$(elem).text()}`
         })
@@ -18,8 +18,8 @@ exports.run = async (client, args, channel, tags, message) => {
         }
             
     })
-// #view_game_page_86405 > div.columns > div.left_col.column > div.uploads > div > div > div > div > strong
 }
+// #view_game_page_60241 > div.columns > div.left_col.column > div.uploads > div > div:nth-child(1) > div > div > strong
 module.exports.config = {
     name: "simulator",
     description: "check version maxon petting simulator",
