@@ -48,7 +48,16 @@ const ErrorSchema = new mongoose.Schema({
     stack: String,
 })
 
+const StreamPingSchema = new mongoose.Schema({
+    username: String,
+    ping: {
+        type: Boolean,
+        default: false
+    }
+})
+
 module.exports.Suggest = mongoose.model("Suggest", SuggestSchema, "Suggests")
 module.exports.Channel = mongoose.model("Channel", ChannelSchema, "Channels");
 module.exports.User = mongoose.model('User', User, "Users");
 module.exports.Error = mongoose.model("Error", ErrorSchema, "Errors")
+module.exports.PingStream = mongoose.model("Ping", StreamPingSchema, "Pings")
