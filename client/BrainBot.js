@@ -77,6 +77,9 @@ client.on("message", async (channel, tags, message, self) => {
     const prefix = (await getCustomPrefix(channel)) || defaultPrefix
     const perm = await feelsdank.DB.User.findOne({id: tags['user-id']});
     
+    if(message.toLowerCase() === "@greddbot") {
+        client.say(channel, `${tags['display-name']}, Префикс этого канала "${prefix}"`)
+    }
     
     let args = message.slice(prefix.length).trim().split(/ +/g)
     let cmd = args.shift().toLowerCase()
