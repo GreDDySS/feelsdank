@@ -16,6 +16,8 @@ exports.run = async (client, args, channel, tags, message) => {
         let text = ""
         $(feelsdank.Misc.randomArg(selector)).each((i, elem) => {
             text += `${$(elem).text()}`
+            var lastWord = text.lastIndexOf(" ")
+            text = text.substring(0, lastWord)
         })
         
         if (text.length > 350) {
