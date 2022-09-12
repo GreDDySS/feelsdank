@@ -49,11 +49,7 @@ const ErrorSchema = new mongoose.Schema({
 })
 
 const StreamPingSchema = new mongoose.Schema({
-    username: String,
-    ping: {
-        type: Boolean,
-        default: false
-    }
+    username: String
 })
 
 module.exports.Suggest = mongoose.model("Suggest", SuggestSchema, "Suggests")
