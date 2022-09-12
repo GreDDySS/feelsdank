@@ -13,6 +13,7 @@ feelsdank.Misc = require("./modules/misc");
 feelsdank.Api = require("./modules/apiClients");
 feelsdank.Seven = require("./client/7tv").initialize();
 feelsdank.Channel = require("./modules/channel")
+feelsdank.PubSub = require("./client/pubsub")
 feelsdank.Temp = {cmdCount: 0, pubsubTopics: []}
 
 // Initializing
