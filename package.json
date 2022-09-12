@@ -22,6 +22,7 @@
     "picocolors": "^1.0.0",
     "request-promise": "^4.2.6",
     "tmi.js": "^1.8.5",
+    "twitchps": "^1.6.0",
     "winston": "^3.7.2"
   }
 }
