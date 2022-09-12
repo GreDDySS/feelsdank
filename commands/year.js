@@ -14,6 +14,6 @@ module.exports.config = {
     name: "year",
     description: "",
     cooldown: 5000,
-    aliases: [],
+    aliases: ["нг", "год"],
     adminOnly: false,
 }
