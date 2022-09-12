@@ -3,7 +3,6 @@ const pc = require('picocolors');
 
 mongoose.connect(`mongodb+srv://${feelsdank.Config.db_user}:${feelsdank.Config.db_pass}@${feelsdank.Config.db_ip}/${feelsdank.Config.db_db}`).then(() => {
     feelsdank.Logger.info(`${pc.green("[DATABASE]")} || DataBase connect successfully`)
-    connect()
 }).catch(e => feelsdank.Logger.error(`${pc.red("[DATABASE]")} || Error: ${e}`))
 
 const User =  mongoose.Schema({
