@@ -25,6 +25,7 @@ exports.run = async (client, args, channel, tags, message) => {
         }
 
         if(args[0] === "тык" && channel === "iamplugg") {
+            if(tags["user-id"] === "428322198") return
             client.say(channel, `${user} Сегодняшний праздник: ${text}`)
         } else {
             client.say(channel, `Сегодняшний праздник: ${text}`)

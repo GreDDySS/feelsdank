@@ -14,7 +14,7 @@ feelsdank.Api = require("./modules/apiClients");
 feelsdank.Seven = require("./client/7tv").initialize();
 feelsdank.Channel = require("./modules/channel")
 feelsdank.PubSub = require("./client/pubsub")
-feelsdank.Temp = {cmdCount: 0, pubsubTopics: []}
+feelsdank.Temp = {cmdCount: 0}
 
 // Initializing
 async function start() {
