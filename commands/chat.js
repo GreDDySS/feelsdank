@@ -1,4 +1,4 @@
-const url = "https://chat.ilotterytea.kz"
+const url = "chat.ilotterytea.kz"
 exports.run = async (client, args, channel, tags, message) => {
     client.say(channel, `@${tags["display-name"]}, ${url}`)
 }
