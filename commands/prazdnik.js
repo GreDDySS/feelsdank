@@ -23,14 +23,14 @@ exports.run = async (client, args, channel, tags, message) => {
         if (text.length > 350) {
             text = `${result.substring(0, 347)}...`
         }
-
+        if (text.length <= 0) return client.say(channel, "Праздника нет")
         if(args[0] === "тык" && channel === "iamplugg") {
             // if(tags["user-id"] === "428322198") return
             client.say(channel, `${user} Сегодняшний праздник: ${text}`)
         } else {
             client.say(channel, `Сегодняшний праздник: ${text}`)
         }
-        
+
             
     })
 
