@@ -70,28 +70,7 @@ client.on("message", async (channel, tags, message, self) => {
 
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
-    setInterval(() => {
-
-        var  d = new Date()
-        if ( d.getUTCFullYear() === 2022 && 
-            d.getUTCMonth() + 1 === 12 && 
-            d.getUTCDate() === 31 && 
-            d.getUTCHours() + 3 === 21 && 
-            d.getUTCMinutes() === 00 &&
-            d.getUTCSeconds() === 00) {
-                client.say("ilotterytea", "С НГ forsenNewYear")
-                client.say("iamplugg", "С НГ Artemu5 BJlaguK_ Bustegg Eggrereal Fedotir GreDDySS GuyRalt Gvardovskiy Gwinsen Iamplugg Iamplugs Matria9 RandomCancer RandomCancer2 StreamElements SunsetColours_ Tuwka_ Xomachel ZULULpa aetenae borobushE crestavlennn eggUrt iLotterytea BetterCallTelevizor m4x0nn monkeoS oladushegg_ rilaveon saopin vexenigmus SunsetColours_ lydeco_ HumanStudi0 AlexanderLer Nipropieren  peepoSnow")
-            }
-    }, 1000)
-
-    //setInterval(() => { 
-    //    var d = new Date().getTime()
-    //    var finish = new Date(22, 12, 31, 21, 42, 40)
-    //    if (d === finish) { 
-    //    client.say("greddyss", "С НГ forsenNewYear"); 
-    //   // client.say("iamplugg", "С НГ peepoSnow"); 
-    //}}, 500) 
-
+    
     if (tags['user-id'] === "555579413" && message === "monkaGIGAftSaj 🚨 НАЗАР АУДАРЫҢЫЗ!") {
         client.say(channel, "/me monkaS 🚨 АЛЕРТ!")
     }
