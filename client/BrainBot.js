@@ -80,7 +80,7 @@ client.on("message", async (channel, tags, message, self) => {
             d.getUTCMinutes() === 00 &&
             d.getUTCSeconds() === 00) {
                 client.say("ilotterytea", "С НГ forsenNewYear")
-                client.say("iamplugg", "С НГ peepoSnow")
+                client.say("iamplugg", "С НГ Artemu5 BJlaguK_ Bustegg Eggrereal Fedotir GreDDySS GuyRalt Gvardovskiy Gwinsen Iamplugg Iamplugs Matria9 RandomCancer RandomCancer2 StreamElements SunsetColours_ Tuwka_ Xomachel ZULULpa aetenae borobushE crestavlennn eggUrt iLotterytea BetterCallTelevizor m4x0nn monkeoS oladushegg_ rilaveon saopin vexenigmus SunsetColours_ lydeco_ HumanStudi0 AlexanderLer Nipropieren  peepoSnow")
             }
     }, 1000)
 
