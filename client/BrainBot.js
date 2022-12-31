@@ -70,6 +70,28 @@ client.on("message", async (channel, tags, message, self) => {
 
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
+    setInterval(() => {
+
+        var  d = new Date()
+        if ( d.getUTCFullYear() === 2022 && 
+            d.getUTCMonth() + 1 === 12 && 
+            d.getUTCDate() === 31 && 
+            d.getUTCHours() === 14 && 
+            d.getUTCMinutes() === 19 &&
+            d.getUTCSeconds() === 00) {
+                client.say("ilotterytea", "BrorStirrer ")
+            }
+        console.log(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes, d.getUTCSeconds())
+    }, 1000)
+
+    //setInterval(() => { 
+    //    var d = new Date().getTime()
+    //    var finish = new Date(22, 12, 31, 21, 42, 40)
+    //    if (d === finish) { 
+    //    client.say("greddyss", "С НГ forsenNewYear"); 
+    //   // client.say("iamplugg", "С НГ peepoSnow"); 
+    //}}, 500) 
+
     if (tags['user-id'] === "555579413" && message === "monkaGIGAftSaj 🚨 НАЗАР АУДАРЫҢЫЗ!") {
         client.say(channel, "/me monkaS 🚨 АЛЕРТ!")
     }
