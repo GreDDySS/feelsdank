@@ -76,12 +76,12 @@ client.on("message", async (channel, tags, message, self) => {
         if ( d.getUTCFullYear() === 2022 && 
             d.getUTCMonth() + 1 === 12 && 
             d.getUTCDate() === 31 && 
-            d.getUTCHours() === 14 && 
-            d.getUTCMinutes() === 19 &&
+            d.getUTCHours() + 3 === 21 && 
+            d.getUTCMinutes() === 00 &&
             d.getUTCSeconds() === 00) {
-                client.say("ilotterytea", "BrorStirrer ")
+                client.say("ilotterytea", "С НГ forsenNewYear")
+                client.say("iamplugg", "С НГ peepoSnow")
             }
-        console.log(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes, d.getUTCSeconds())
     }, 1000)
 
     //setInterval(() => { 
