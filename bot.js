@@ -2,6 +2,9 @@ const pc = require("picocolors");
 const fs = require("fs");
 const utils = require("util")
 
+const keepAlive = require("./web/server.js")
+const parsing = require("./modules/parsing")
+
 
 global.feelsdank = {};
 
@@ -22,6 +25,8 @@ async function start() {
         feelsdank.Seven
         feelsdank.Twitch;
         feelsdank.DB;
+        keepAlive()
+        parsing()
     } catch (e) {
         feelsdank.Logger.error(`Error encountered during initialization: ${e}`);
     }
