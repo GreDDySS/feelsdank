@@ -1,0 +1,283 @@
+[
+  {
+    "id": 0,
+    "name": "%",
+    "description": "random precentage between 0% and 100%",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 1,
+    "name": "8ball",
+    "description": "Checks your question against the fortune-telling 8-ball.",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 2,
+    "name": "accage",
+    "description": "This command will tell you the specified users account age",
+    "cooldown": 10000,
+    "aliases": [
+      "accountage",
+      "age"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "cat",
+    "description": "Give you a link to a picture of a random cat",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 4,
+    "name": "chat",
+    "description": "web chat",
+    "cooldown": 5000,
+    "aliases": [
+      "чат",
+      "пипочат",
+      "пиппочат",
+      "peppochat",
+      ""
+    ]
+  },
+  {
+    "id": 5,
+    "name": "chatters",
+    "description": "Tells how many users are in the chat.",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 6,
+    "name": "coinflip",
+    "description": "This command will do a 50/50 coinflip",
+    "cooldown": 5000,
+    "aliases": [
+      "cf"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "color",
+    "description": "Says the name of the user's color",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 8,
+    "name": "commands",
+    "description": "",
+    "cooldown": 5000,
+    "aliases": [
+      "cmd",
+      "help"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "dice",
+    "description": "random number from 1 to 6",
+    "cooldown": 5000,
+    "aliases": [
+      "кубик"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "dog",
+    "description": "Random picture dog",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 11,
+    "name": "eval",
+    "description": "js code",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 12,
+    "name": "fill",
+    "description": "'repeats the specified phrase until it reaches 500 characters",
+    "cooldown": 30000,
+    "aliases": []
+  },
+  {
+    "id": 13,
+    "name": "followage",
+    "description": "give you the time a given user has followed a given channel",
+    "cooldown": 5000,
+    "aliases": [
+      "followe"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "fox",
+    "description": "random image fox",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 15,
+    "name": "game",
+    "description": "set/check game",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 16,
+    "name": "join",
+    "description": "connect to other channel",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 17,
+    "name": "leave",
+    "description": "leave channel",
+    "aliases": [
+      ""
+    ]
+  },
+  {
+    "id": 18,
+    "name": "math",
+    "description": "mathematical calculations",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 19,
+    "name": "notify",
+    "description": "notify stream live",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 20,
+    "name": "off",
+    "description": "off bot",
+    "cooldown": 500,
+    "aliases": [
+      "shutdown"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "ping",
+    "description": "",
+    "cooldown": 5000,
+    "aliases": [
+      "pong"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "prazdnik",
+    "description": "What a holiday today",
+    "cooldown": 10000,
+    "aliases": [
+      "праздник"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "prefix",
+    "description": "set prefix channel",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 24,
+    "name": "pull",
+    "description": "pull the files from github",
+    "cooldown": 5000,
+    "aliases": [
+      "rs"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "set",
+    "description": "set settings user/channel in database",
+    "cooldown": 500,
+    "aliases": [
+      "set"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "simulator",
+    "description": "check version maxon petting simulator",
+    "cooldown": 10000,
+    "aliases": [
+      "sim",
+      "maxon"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "spam",
+    "description": "repeat massage",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 28,
+    "name": "suggest",
+    "description": "Users can leave wishes, or suggest making something new!",
+    "cooldown": 10000,
+    "aliases": [
+      "sg"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "templ",
+    "description": "",
+    "cooldown": 5000,
+    "aliases": []
+  },
+  {
+    "id": 30,
+    "name": "test",
+    "description": "test",
+    "cooldown": 5000,
+    "aliases": [
+      "test"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "tittle",
+    "description": "set tittle stream",
+    "cooldown": 5000,
+    "aliases": [
+      "title"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "info",
+    "description": "Check user info",
+    "cooldown": 15000,
+    "aliases": [
+      "ui"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "year",
+    "description": "",
+    "cooldown": 5000,
+    "aliases": [
+      "нг",
+      "год"
+    ]
+  }
+]

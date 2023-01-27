@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
+body{
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(49, 49, 49);
+    font-family: 'Manrope', sans-serif;
+    font-size: 25px;
+}
+
+.box {
+    display: flex;
+    font-weight: 600;
+    width: 200px;
+    height: 200px;
+    flex-flow: column;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: rgba(32, 32, 32, 0.375);
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    margin: 20px;
+    padding-bottom: 10px;
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.link:hover {
+    background: rgba(58, 58, 58, 0.178);
+    cursor: pointer;
+}
+
+p {
+    font-size: small;
+    opacity: 50%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.row {
+    float: right;
+    display: flex;
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    flex-flow: column;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(32, 32, 32, 0.375);
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    padding: 5px;
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.row:hover {
+    background: rgba(58, 58, 58, 0.178);
+    cursor: pointer;
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .box {
+        justify-content: center;
+        text-align: center;
+        height: 180px;
+    }
+    .out {
+        padding: 70px;
+        float: right;
+    }
+}
+
+
+@media (min-width: 950px) {
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+    
+}
