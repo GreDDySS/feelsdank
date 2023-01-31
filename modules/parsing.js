@@ -1,7 +1,7 @@
 const rp = require("request-promise")
 const cheerio = require("cheerio")
 const pc = require("picocolors")
-const urlKak = "https://kakoysegodnyaprazdnik.ru"
+const urlKak = "https://kakoyprazdniksegodnya.ru"
 const urlMy = "https://my-calend.ru/holidays"
 const fs = require("fs")
 async function pars() {
@@ -10,7 +10,7 @@ async function pars() {
         const $ = cheerio.load(htm)
         const regex = /\([^)]*\)/;
         for (let i = 0; i < 1; i++) {
-         $(`div > * > *[itemprop = "text"]`).each((i, elem) => {
+         $(`div.prazdnik-block.prazdnik-block-1 > div > ol > li`).each((i, elem) => {
             celebration.push(`${$(elem).text().replace(regex, "")}`)
          })
         }
