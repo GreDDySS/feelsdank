@@ -71,9 +71,6 @@ client.on("message", async (channel, tags, message, self) => {
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
     
-    if (tags['user-id'] === "555579413" && message === "monkaGIGAftSaj 🚨 НАЗАР АУДАРЫҢЫЗ!") {
-        client.say(channel, "/me monkaS 🚨 АЛЕРТ!")
-    }
     channel = channel.replace("#", "");
     const prefix = (await getCustomPrefix(channel)) || defaultPrefix
     const perm = await feelsdank.DB.User.findOne({id: tags['user-id']});
