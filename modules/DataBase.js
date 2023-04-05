@@ -2,13 +2,14 @@ const mongoose  = require('mongoose');
 const pc = require('picocolors');
 
 main().catch(e => feelsdank.Logger.error(`${pc.red("[DATABASE]")} || Error: ${e}`))
-
+// Connect to DB
 async function main() {
   await mongoose.connect(`mongodb+srv://${feelsdank.Config.db_user}:${feelsdank.Config.db_pass}@${feelsdank.Config.db_ip}/${feelsdank.Config.db_db}`).then(() => {
   feelsdank.Logger.info(`${pc.green("[DATABASE]")} || DataBase connect successfully`)
   })
 }
 
+// Schem's DataBase
 const User =  mongoose.Schema({
     id: String,
     username: String,
