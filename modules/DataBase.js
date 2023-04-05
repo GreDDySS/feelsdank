@@ -4,7 +4,7 @@ const pc = require('picocolors');
 main().catch(e => feelsdank.Logger.error(`${pc.red("[DATABASE]")} || Error: ${e}`))
 
 async function main() {
-  await mongoose.connect(`mongodb+srv://GreDDySS:28Chrome201826@cluster0.744az.mongodb.net/TwitchBot`).then(() => {
+  await mongoose.connect(`mongodb+srv://${feelsdank.Config.db_user}:${feelsdank.Config.db_pass}@${feelsdank.Config.db_ip}/${feelsdank.Config.db_db}`).then(() => {
   feelsdank.Logger.info(`${pc.green("[DATABASE]")} || DataBase connect successfully`)
   })
 }
