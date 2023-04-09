@@ -32,4 +32,4 @@ function parsing() {
         pars().then(() => feelsdank.Logger.info(`${pc.green('[CELEBRATION]')} || Celebration update!`))
     }, 7200 * 1000)
 }
-module.exports = parsing
+module.exports = {parsing, pars}
