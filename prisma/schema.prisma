@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Channel {
+  name               String    @db.VarChar(100)
+  userId             String    @id @db.VarChar(50)
+  date               DateTime  @default(now())
+  mode               String    @default("Chatter")
+  prefix             String    @default("`")
+  ignore             Boolean   @default(false)
+  sevenTV            Boolean   @default(true)
+  sevenID            String    @default("none")
+  listenStreamStatus Boolean   @default(false)
+}
+
+model User {
+  name              String @db.VarChar(100)
+  userId            String @id @db.VarChar(50)
+  displayName       String @db.VarChar(100)
+  permission        String @default("user")
+}
+
+model Log {
+  id      Int      @id @default(autoincrement())
+  date    DateTime @default(now())
+  name    String   @db.VarChar(100)
+  message String   @db.Text()
+  stack   String   @db.Text()
+}
