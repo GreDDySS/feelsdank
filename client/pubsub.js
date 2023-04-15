@@ -24,9 +24,7 @@ pubsub.on('reconnect', () => {
 });
 
 pubsub.on('stream-up', async (data) => {
-    const ping = await feelsdank.DB.PingStream.find({ping: true}, {username: 1})
     client.say("greddyss", `/announce Стрим начался`)
-    client.sau("greddyss", `/announce ${ping.map((c) => c.username)}`)
 })
 
 pubsub.on('stream-down', async (data) => {
