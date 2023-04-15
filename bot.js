@@ -10,13 +10,13 @@ global.feelsdank = {};
 
 feelsdank.Config = require("./other/config");
 feelsdank.Logger = require("./modules/winston");
-feelsdank.DB = require("./modules/DataBase");
 feelsdank.Twitch = require('./client/BrainBot');
 feelsdank.Misc = require("./modules/misc");
 feelsdank.Api = require("./modules/apiClients");
 feelsdank.Seven = require("./client/7tv").initialize();
 feelsdank.Channel = require("./modules/channel")
 feelsdank.PubSub = require("./client/pubsub")
+feelsdank.SB = require("./modules/Database.js")
 feelsdank.Temp = {cmdCount: 0}
 
 // Initializing
@@ -24,7 +24,7 @@ async function start() {
     try {
         feelsdank.Seven
         feelsdank.Twitch;
-        feelsdank.DB;
+        feelsdank.SB;
         keepAlive()
         parsing()
     } catch (e) {
