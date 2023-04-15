@@ -1,5 +1,7 @@
 const getById = async (userId) => {
-    const channelData = await feelsdank.DB.Channel.findOne({id: userId})
+    const channelData = await feelsdank.SB.db.channel.findFirst({
+        where: {userId: userId},
+    })
     if(!channelData) {
         return undefined
     }
@@ -7,7 +9,9 @@ const getById = async (userId) => {
 }
 
 const getByName = async (username) => {
-    const channelData = await feelsdank.DB.Channel.findOne({username: username})
+    const channelData = await feelsdank.SB.db.channel.findFirst({
+        where: {name: username}
+    })
     if (!channelData) {
         return undefined
     }
@@ -15,25 +19,29 @@ const getByName = async (username) => {
 }
 
 const getJoinable = async () => {
-    const channels = await feelsdank.DB.Channel.find({ignore: false})
+    const channels = await feelsdank.SB.db.channel.findMany({
+        where: {ignore: false}
+    })
     if(!channels) {
         return []
     }
 
     const result = channels.map((item) => {
-        return item.username
+        return item.name
     })
     return result
 }
 
 const getListenable = async () => {
-    const channels = await feelsdank.DB.Channel.find({listenStreamStatus: true})
+    const channels = await feelsdank.SB.db.channel.findMany({
+        where: { listenStreamStatus: false}
+    })
     if (!channels) {
         return []
     }
 
     const result = channels.map((item) => {
-        return item.id
+        return item.userId
     })
     return result
 }

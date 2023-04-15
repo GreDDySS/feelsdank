@@ -82,13 +82,14 @@ const randomArg = (arg) => {
   return arg[result]
 }
 
-const logError = (name, reason, stack) => {
-  const Error = new feelsdank.DB.Error({
-    name: name,
-    message: reason,
-    stack: stack,
+const logError = async (name, reason, stack) => {
+  await feelsdank.SB.db.log.create({
+    data: {
+      name: name,
+      message: reason,
+      stack: stack,
+    }
   })
-  Error.save()
 }
 
 module.exports = { uptime, humanizer, timeDelta, humanizeDuration, randomConnectEmote, random, randomArg, logError}

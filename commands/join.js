@@ -1,17 +1,16 @@
 exports.run = async (client, args, channel, tags, message) => {
     if (!args[0]) {
         const TargetName = tags.username.toLowerCase()
-        const channelName = await feelsdank.DB.Channel.findOne({username: TargetName})
-
+        const channelName = await feelsdank.Channel.getByName(TargetName)
         if (channelName == null) {
-            const newChannel = new feelsdank.DB.Channel({
-                username: TargetName,
-                id: tags["user-id"],
-                customPrefix: args[1]
+            await feelsdank.SB.db.channel.create({
+                data: {
+                    name: TargetName,
+                    userId: tags['user-id'],
+                }
             })
-            newChannel.save();
             await client.join(TargetName)
-            await client.say(`${TargetName}`, `@${TargetName}, YO!`)
+            //await client.say(`${TargetName}`, `@${TargetName}, YO!`)
             await client.say(channel,`Успешно подключился к ${TargetName} FeelsOkayMan`)
         } else {
             client.say(channel, "Вы уже добавлены 😶")
@@ -20,18 +19,20 @@ exports.run = async (client, args, channel, tags, message) => {
 
     if (tags.username === feelsdank.Config.owner) {
         const channelTarget = args[0].toLowerCase()
+        const chonnel = await feelsdank.Channel.getByName(channelTarget)
         const uid = await feelsdank.Api.leppunen(`resolve/${channelTarget}`)
-        const chonnel = await feelsdank.DB.Channel.findOne({username: channelTarget})
 
         if (chonnel == null) {
-            const newChannel = new feelsdank.DB.Channel({
-                username: channelTarget,
-                id: uid.id,
-                customPrefix: args[1]
+            await feelsdank.SB.db.channel.create({
+                data: {
+                    name: channelTarget,
+                    userId: uid.id,
+                    prefix: args[1],
+                    sevenID: args[2]
+                }
             })
-            newChannel.save();
             await client.join(channelTarget)
-            await client.say(`${args[0]}`, `@${args[0]}, YO!`)
+            //await client.say(`${args[0]}`, `@${args[0]}, YO!`)
             await client.say(channel,`Успешно подключился к ${args[0]} FeelsOkayMan`)
         } else {
             client.say(channel, "Данный канал уже используется 😶")

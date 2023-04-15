@@ -3,11 +3,7 @@ exports.run = async (client, args, channel, tags, message) => {
         if (!args) return
 
         const targetName = tags.username.toLowerCase()
-        const prefix = await feelsdank.DB.Channel.findOneAndUpdate(
-            {username: targetName},
-            {customPrefix: args[0]}
-        )
-        prefix.save()
+        await feelsdank.SB.db.channel.update({where: {name: targetName}, data: {prefix: args[0]}})
         client.say(channel, `${tags["display-name"]}, Успешно установлен префикс! feelsOkayMan`)
 
     } else {

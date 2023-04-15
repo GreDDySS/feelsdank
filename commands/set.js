@@ -2,19 +2,14 @@ const SevenTV = require("../client/7tv")
 exports.run = async (client, args, channel, tags, message, user) => {
 
     const userna = args[1].toLowerCase();
+    const uid = await feelsdank.Api.leppunen(`resolve/${userna}`)
    if(args[0] === "prefix") {
-       await feelsdank.DB.Channel.findOneAndUpdate(
-           { username: userna },
-           { customPrefix: args[2] }
-       )
+        await feelsdank.SB.db.channel.update({where: {userId: uid.id}, data: {prefix: Boolean(args[2])}})
    
        client.say(channel, `/me FeelsOkayMan 👍 Префикс канала ${userna} успешно заменён на "${args[2]}"`)
    }
    if(args[0] === "ignore") {
-        await feelsdank.DB.Channel.findOneAndUpdate(
-            { username: userna },
-            { ignore: args[2] }
-        )
+        await feelsdank.SB.db.channel.update({where: {userId: uid.id}, data: {ignore: Boolean(args[2])}})
             if(args[2] == "true") {
                 client.say(channel, `/me FeelsOkayMan 👍 Данный канал ${userna} добавлен в список игнориремых.`)
             }
@@ -23,19 +18,16 @@ exports.run = async (client, args, channel, tags, message, user) => {
             }
         
     }
-    if(args[0] === "perm") {
-        await feelsdank.DB.User.findOneAndUpdate(
-            { username: userna },
-            { permission: args[2]}
-        )
-        client.say(channel, `/me FeelsOkayMan 👍 Права пользователя ${userna} успешно обновлены на "${args[2]}"`)
-    }
+    //if(args[0] === "perm") {
+    //    await feelsdank.DB.User.findOneAndUpdate(
+    //        { username: userna },
+    //        { permission: args[2]}
+    //    )
+    //    client.say(channel, `/me FeelsOkayMan 👍 Права пользователя ${userna} успешно обновлены на "${args[2]}"`)
+    //}
     if(args[0] === "7tv") {
+        await feelsdank.SB.db.channel.update({where: {userId: uid.id}, data: {sevenTV: Boolean(args[2])}})
 
-        await feelsdank.DB.Channel.findOneAndUpdate(
-            { username: userna },
-            { SevenTV: args[2] }
-        )
             if(args[2] == "true") {
                 client.say(channel, `/me FeelsOkayMan 👍 На каналe ${userna} включены эвенты 7TV.`)
                 SevenTV.initialize()
@@ -44,6 +36,11 @@ exports.run = async (client, args, channel, tags, message, user) => {
                 client.say(channel, `/me FeelsOkayMan 👍 На каналe ${userna} выключены эвенты 7TV.`)
                 SevenTV.initialize()
             }
+    }
+    if(args[0] == "7id") {
+        await feelsdank.SB.db.channel.update({where: {userId: uid.id}, data: {sevenID:  args[2]}})
+        client.say(channel, `/me FeelsOkayMan 👍 Обновлён 7TV-id для ${userna}`)
+        SevenTV.initialize()
     }
 }
 module.exports.config = {

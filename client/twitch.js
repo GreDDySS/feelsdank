@@ -12,9 +12,8 @@ const options = {
 const client = new tmi.Client(options);
 
 const joinChannels = async () => {
-    const result = await feelsdank.DB.Channel.find({ignore: false})
+    const result = await feelsdank.Channel.getJoinable()
     result
-        .map((c) => c.username)
         .forEach((channel) => {
             client
                 .join(channel)

@@ -1,8 +1,6 @@
 const fs = require('fs');
 const pc = require("picocolors");
-const client = require("./twitch");
-const ChannelModel = feelsdank.DB.Channel
-const defaultPrefix = feelsdank.Config.prefix;
+const client = require("./twitch")
 
 client.commands = new Map();
 client.aliases = new Map();
@@ -29,14 +27,11 @@ fs.readdir(__dirname + "/../commands", (err, files) => {
 })
 
 async function getCustomPrefix(channel) {
-    const result = await ChannelModel.findOne({ username: channel}).catch(
+    const result = await feelsdank.SB.db.channel.findFirst({where: {name: channel}}).catch(
         (err) => {feelsdank.Logger.error(`${pc.red("[ERROR]")} || Error when searching for a prefix:` + `${err}`)}
     )
-    if (result.customPrefix == null) {
-        return defaultPrefix
-    } else {
-        return result.customPrefix
-    }
+        return result.prefix
+    
 
 };
 
@@ -57,23 +52,23 @@ client.on("message", async (channel, tags, message, self) => {
     if (self) return;
     channel = channel.replace("#", "");
     // Checking the user in DB, if not -> add to DB
-    const User = await feelsdank.DB.User.findOne({id: tags['user-id']});
-    if (User == null) {
-        const newUser = new feelsdank.DB.User({
-        id: tags["user-id"],
-        username: tags.username,
-        displayname: tags['display-name'],
-    });
-    newUser.save();
-    };
+    // const User = await feelsdank.DB.User.findOne({id: tags['user-id']});
+    // if (User == null) {
+    //     const newUser = new feelsdank.DB.User({
+    //     id: tags["user-id"],
+    //     username: tags.username,
+    //     displayname: tags['display-name'],
+    // });
+    // newUser.save();
+    // };
 })
 
 client.on("message", async (channel, tags, message, self) => {
     if (self) return;
     
     channel = channel.replace("#", "");
-    const prefix = (await getCustomPrefix(channel)) || defaultPrefix
-    const perm = await feelsdank.DB.User.findOne({id: tags['user-id']});
+    const prefix = await getCustomPrefix(channel)
+    // const perm = await feelsdank.DB.User.findOne({id: tags['user-id']});
     
     if(message.toLowerCase() === "@greddbot" || message.toLowerCase() === "@greddbot,") {
         client.say(channel, `${tags['display-name']}, Префикс этого канала "${prefix}"`)
@@ -86,7 +81,7 @@ client.on("message", async (channel, tags, message, self) => {
     if (!cmdF || !message.startsWith(prefix) || cmdF.cooldown_users.includes(tags["user-id"]))
         return
     
-        if (cmdF.config.adminOnly && !(tags.username == feelsdank.Config.owner) && !(perm.permission == "spec")) return;
+        if (cmdF.config.adminOnly && !(tags.username == feelsdank.Config.owner)) return;
         
         try {
             cmdF.run(client, args, channel, tags, message)

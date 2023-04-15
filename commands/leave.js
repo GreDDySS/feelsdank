@@ -2,16 +2,19 @@ exports.run = async (client, args, channel, tags, message, user) => {
     if (tags.badges.broadcaster) {
         if (!args) return
 
-        const streamer = tags.username.toLowerCase();
-        await feelsdank.DB.Channel.deleteOne({username: streamer})
+        const streamer = tags['user-id'];
+        await feelsdank.SB.db.channel.delete({where: {userId: streamer}})
+        client.part(tags.username)
+    } else {
+        client.say(channel, "NOIDONTTHINKSO")
     }
     if (tags.username === feelsdank.Config.owner) {
-        const arg = args[0].toLowerCase();
-        await feelsdank.DB.Channel.deleteOne({username: arg})
-        client.part(args[0])
-        client.say(channel, `Отключился от канала ${args[0]} Okayeg`)
-    } else {
-        client.say(channel, `NOIDONTTHINKSO`)
+        const channelTarget = args[0].toLowerCase()
+        const chonnel = await feelsdank.Channel.getByName(channelTarget)
+        const uid = await feelsdank.Api.leppunen(`resolve/${channelTarget}`)
+        await feelsdank.SB.db.channel.delete({where: {userId: uid.id}})
+        client.part(chonnel)
+        client.say(channel, `Отключился от канала ${chonnel} Okayeg`)
     }
 }
 module.exports.config = {
