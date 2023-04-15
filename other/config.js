@@ -8,8 +8,5 @@ module.exports = {
     prefix: process.env.PREFIX,
     owner: process.env.OWNER,
     botId: process.env.BOTID,
-    db_user: process.env.DB_USERNAME,
-    db_pass: process.env.DB_PASSWORD,
-    db_ip: process.env.DB_IP,
-    db_db: process.env.DB_DATABASE,
+    db_supa: process.env.DATABASE_URL,
 };
